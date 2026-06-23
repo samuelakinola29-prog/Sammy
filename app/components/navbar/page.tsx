@@ -1,103 +1,127 @@
 "use client";
 
-import { Search } from "lucide-react";
+import { Search, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
-  // Helper function to dynamically calculate text colors and active indicator lines
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Booking", href: "/booking" },
+    { name: "Shop", href: "/shop" },
+    { name: "Contact", href: "/contact" },
+  ];
+
   const getNavLinkClass = (href: string) => {
     const isActive = pathname === href;
+
     return `relative cursor-pointer transition-colors duration-300 py-2 ${
-      isActive 
-        ? "text-[#8B6A00] font-semibold" 
+      isActive
+        ? "text-[#8B6A00] font-semibold"
         : "text-[#4A4A4A] hover:text-[#8B6A00]"
     }`;
   };
 
   return (
-    <header className="w-full bg-white border-b border-gray-200 static top-0 z-50">
-      <div className="max-w-7xl mx-auto h-[72px] flex items-center justify-between px-8 lg:px-12">
-        
+   <main className="max-w-7xl mx-auto px-6 py-16 text-[#0b1325]">
+      <div className="max-w-7xl mx-auto h-[72px] flex items-center justify-between px-5 md:px-8 lg:px-12">
+
         {/* Logo */}
-        <Link href="/">
-          <h1 className="text-[28px] md:text-[36px] font-serif tracking-[4px] text-[#8B6A00] transition-opacity hover:opacity-90">
-            SAMMY TEE
-          </h1>
-        </Link>
+        <div className="flex items-center gap-3">
+          <img
+            src="/logo.jpg"
+            alt="Sammy T Logo"
+            className="h-15 w-15 object-cover rounded-full"
+          />
 
-        {/* Navigation */}
-        <nav>
-          <ul className="flex items-center gap-10 text-[15px] font-medium">
-            
-            {/* Home */}
-            <Link href="/">
-              <li className={getNavLinkClass("/")}>
-                Home
-                {pathname === "/" && (
-                  <span className="absolute left-0 bottom-[-24px] h-[3px] w-full bg-[#C9A227]" />
-                )}
-              </li>
-            </Link>
-            
-            {/* About */}
-            <Link href="/about">
-              <li className={getNavLinkClass("/about")}>
-                About
-                {pathname === "/about" && (
-                  <span className="absolute left-0 bottom-[-24px] h-[3px] w-full bg-[#C9A227]" />
-                )}
-              </li>
-            </Link>
+          <Link href="/">
+            <h1 className="text-[22px] md:text-[30px] font-serif tracking-[4px] text-[#8B6A00]">
+              SAMMY T
+            </h1>
+          </Link>
+        </div>
 
-            {/* Booking */}
-            <Link href="/booking">
-              <li className={getNavLinkClass("/booking")}>
-                Booking
-                {pathname === "/booking" && (
-                  <span className="absolute left-0 bottom-[-24px] h-[3px] w-full bg-[#C9A227]" />
-                )}
-              </li>
-            </Link>
 
-            {/* Shop */}
-            <Link href="/shop">
-              <li className={getNavLinkClass("/shop")}>
-                Shop
-                {pathname === "/shop" && (
-                  <span className="absolute left-0 bottom-[-24px] h-[3px] w-full bg-[#C9A227]" />
-                )}
-              </li>
-            </Link>
+        {/* Desktop Navigation */}
+        <nav className="hidden md:block">
+          <ul className="flex items-center gap-8 lg:gap-10 text-[15px] font-medium">
 
-            {/* Contact */}
-            <Link href="/contact">
-              <li className={getNavLinkClass("/contact")}>
-                Contact
-                {pathname === "/contact" && (
-                  <span className="absolute left-0 bottom-[-24px] h-[3px] w-full bg-[#C9A227]" />
-                )}
+            {navLinks.map((link) => (
+              <li key={link.href} className={getNavLinkClass(link.href)}>
+                <Link href={link.href}>
+                  {link.name}
+
+                  {pathname === link.href && (
+                    <span className="absolute left-0 bottom-[-24px] h-[3px] w-full bg-[#C9A227]" />
+                  )}
+                </Link>
               </li>
-            </Link>
+            ))}
 
           </ul>
         </nav>
 
-        {/* Right Section */}
-        <div className="flex items-center gap-8">
+
+        {/* Desktop Right Section */}
+        <div className="hidden md:flex items-center gap-8">
+
           <Search
             size={22}
             strokeWidth={1.8}
-            className="cursor-pointer text-[#4A4A4A] hover:text-[#8B6A00] transition-colors"
+            className="cursor-pointer text-[#4A4A4A] hover:text-[#8B6A00]"
           />
 
-          <button className="px-8 py-3 rounded-full bg-[#D4AF37] text-[#4D3A00] text-sm font-medium hover:bg-[#c7a32f] hover:shadow-md transition">
+          <button className="px-7 py-3 rounded-full bg-[#D4AF37] text-[#4D3A00] text-sm font-medium hover:bg-[#c7a32f] transition">
             Book Now
           </button>
+
         </div>
+
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-[#8B6A00]"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X size={28} /> : <Menu size={28} />}
+        </button>
+
       </div>
-    </header>
+
+
+      {/* Mobile Navigation */}
+      {open && (
+        <div className="md:hidden bg-white border-t border-gray-200 px-6 py-5">
+
+          <ul className="flex flex-col gap-5 text-[16px]">
+
+            {navLinks.map((link) => (
+              <li
+                key={link.href}
+                className={getNavLinkClass(link.href)}
+                onClick={() => setOpen(false)}
+              >
+                <Link href={link.href}>
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+
+          </ul>
+
+
+          <button className="mt-6 w-full px-6 py-3 rounded-full bg-[#D4AF37] text-[#4D3A00]">
+            Book Now
+          </button>
+
+        </div>
+      )}
+
+    </main>
   );
 }

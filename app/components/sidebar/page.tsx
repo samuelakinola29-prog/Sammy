@@ -1,16 +1,16 @@
 export default function Sidebar() {
   const categories = [
     "All Collections",
-    "Keyboards & Synths",
-    "Electric Guitars",
-    "Acoustic Guitars",
-    "Drums & Percussion",
-    "Grand Pianos",
-    "Audio Interfaces",
-    "Studio Monitors"
+    "Normal Talking Drum",
+    "Electric Talking Drum",
+    "Wireless Elect. Talking Drum",
+    "Professional",
+    "Beginners",
+    "Studio standard",
+    "3 in 1 Multi- function"
   ];
 
-  const brands = ["Yamaha", "Fender", "Roland", "Nord"];
+  const brands = ["Normal", "Professional", "Wireless", "Electric","Beginners"];
 
   return (
     <aside className="hidden md:flex flex-col gap-9">
@@ -40,8 +40,8 @@ export default function Sidebar() {
           className="w-full accent-[#bfa15f] cursor-pointer"
         />
         <div className="flex justify-between text-xs text-gray-400 mt-2">
-          <span>$0</span>
-          <span>$10,000+</span>
+          <span>#0</span>
+          <span>#1,000,000+</span>
         </div>
       </div>
 

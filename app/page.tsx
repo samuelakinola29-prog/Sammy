@@ -34,7 +34,7 @@ export default function HomePage() {
   className="relative min-h-[90vh] bg-cover bg-center bg-no-repeat"
   style={{
     backgroundImage:
-  "url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1600&q=80')",
+   "url('/stage2.jpg')",
   }}
 >
   {/* Dark overlay */}
@@ -44,13 +44,13 @@ export default function HomePage() {
   <div className="relative max-w-7xl mx-auto px-6 py-32">
     <div className="max-w-xl text-white">
       <p className="text-sm uppercase tracking-widest text-yellow-400">
-        SAMMY TEE
+        SAMMY T WORLDWIDE
       </p>
 
       <h1 className="text-5xl md:text-7xl font-bold leading-tight mt-4">
         Elevate Your Sound
         <br />
-        with Sammy Tee
+        with Sammy T worldwide
       </h1>
 
       <p className="mt-6 text-lg text-gray-200">
@@ -157,28 +157,28 @@ export default function HomePage() {
             <div className="space-y-6">
               <div className="border-b pb-5">
                 <h3 className="font-bold">
-                  The Melody Symphony Gala
+                  The Final Burial Ceremony
                 </h3>
                 <p className="text-gray-600">
-                  July 20, 2026
+                  June 26, 2026
                 </p>
               </div>
 
               <div className="border-b pb-5">
                 <h3 className="font-bold">
-                  Acoustic Night Live
+                  TUG 2026
                 </h3>
                 <p className="text-gray-600">
-                  August 10, 2026
+                  June 28, 2026
                 </p>
               </div>
 
               <div>
                 <h3 className="font-bold">
-                  Jazz Evening Experience
+                  Ilorin Praise Concert
                 </h3>
                 <p className="text-gray-600">
-                  September 15, 2026
+                  July 26, 2026
                 </p>
               </div>
             </div>

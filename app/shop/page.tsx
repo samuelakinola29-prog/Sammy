@@ -6,63 +6,74 @@ import Footer from "../components/footer/page";
 import Navbar from "../components/navbar/page";
 
 // Export the mock database so your dynamic product page can read from it too
-export const products = [
+ export const products = [
   {
     id: 1,
-    title: "Nord Stage 4 88",
-    category: "Keyboards",
-    rating: "5.0",
-    price: "₦4,999,000.00",
-    oldPrice: "₦5,499,000.00",
-    image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=600",
+    title: "Professional Talking Drum",
+    category: "Drum",
+    rating: "9.0",
+    price: "₦40,000.00",
+    oldPrice: "₦50,000.00",
+    image: "/DRUM1.jpg",
     badge: "NEW",
-    description: "Elevate your performance with the definitive stage piano. Crafted for the elite artist, the Nord Stage 4 combines our legendary hammer-action feel with a world-class sound engine."
+    description:
+      "Elevate your performance with the definitive stage Talking Drum. Crafted for the elite artist with premium sound quality."
   },
+
   {
     id: 2,
-    title: "Custom Series Strat",
-    category: "Guitars",
-    rating: "5.0",
-    price: "₦2,850,000.00",
-    image: "https://images.unsplash.com/photo-1550985616-10810253b84d?q=80&w=600",
-    description: "A masterwork of tonal clarity and fluid playability. Built with choice timbers to bring legacy performance straight to modern stages."
+    title: "Electric Talking Drum",
+    category: "Drums",
+    rating: "10.0",
+    price: "₦100,000.00",
+    image: "/DRUM2.jpg",
+    description:
+      "A masterwork of tonal clarity and fluid playability built for modern stages."
   },
+
   {
     id: 3,
-    title: "Elite Stream Interface",
-    category: "Audio Gear",
-    rating: "4.8",
-    price: "₦899,000.00",
-    image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=600",
-    description: "Studio-grade converters featuring ultra-low latency. Capture raw inspiration with crystal clear definitions."
+    title: "Perfect Talking Drum",
+    category: "Drum",
+    rating: "8.0",
+    price: "₦35,000.00",
+    image: "/DRUM4.jpg",
+    description:
+      "Studio-grade drum with excellent response and professional performance quality."
   },
+
   {
     id: 4,
-    title: "Walnut Shell Pack",
+    title: "Wireless Electrical Drum",
     category: "Drums",
-    rating: "4.7",
-    price: "₦3,200,000.00",
-    image: "https://images.unsplash.com/photo-1543443374-b6fe10a6ab7b?q=80&w=600",
-    description: "Rich, dark, and highly focused tones. This custom-selected premium walnut construction ensures magnificent projection."
+    rating: "10.0",
+    price: "₦250,000.00",
+    image: "/DRUM5.jpg",
+    description:
+      "Premium construction with rich tones and excellent projection."
   },
+
   {
     id: 5,
-    title: "Reference 8 Studio",
-    category: "Audio Gear",
-    rating: "4.9",
-    price: "₦1,150,000.00",
-    image: "https://images.unsplash.com/photo-1545048702-79362596cdc9?q=80&w=600",
-    description: "Uncompromised acoustic linear monitoring. Build precise mix environments with pinpoint soundstage tracking."
+    title: "Studio Quality Drum",
+    category: "Drums",
+    rating: "7.9",
+    price: "₦30,000.00",
+    image: "/drum6.jpg",
+    description:
+      "Designed for studio recordings with accurate sound reproduction."
   },
+
   {
     id: 6,
-    title: "Master Series Grand",
-    category: "Pianos",
-    rating: "5.0",
-    price: "₦85,000,000.00",
-    image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=600",
+    title: "Master Talking Drum",
+    category: "Drums",
+    rating: "9.0",
+    price: "₦50,000.00",
+    image: "/drum8.jpg",
     badge: "TOP RATED",
-    description: "The ultimate peak of artisanal concert grand engineering. Timeless resonance constructed for generation-spanning legacy."
+    description:
+      "A handcrafted professional talking drum made for stage and studio performance."
   },
 ];
 
