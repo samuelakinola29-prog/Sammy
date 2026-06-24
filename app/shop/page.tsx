@@ -75,6 +75,15 @@ import Navbar from "../components/navbar/page";
     description:
       "A handcrafted professional talking drum made for stage and studio performance."
   },
+   {
+  id: 7,
+  title: "Playing Stick",
+  category: "Accessories",
+  rating: "8.5",
+  price: "₦2,000",
+  image: "/stick1.jpg",
+  description: "High-quality talking drum playing stick."
+}
 ];
 
 export default function ShopPage() {

@@ -4,6 +4,7 @@ import { Search, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -15,6 +16,7 @@ export default function Navbar() {
     { name: "Booking", href: "/booking" },
     { name: "Shop", href: "/shop" },
     { name: "Contact", href: "/contact" },
+    { name: "Gallery", href: "/Gallery" },
   ];
 
   const getNavLinkClass = (href: string) => {
@@ -36,7 +38,7 @@ export default function Navbar() {
           <img
             src="/logo.jpg"
             alt="Sammy T Logo"
-            className="h-15 w-15 object-cover rounded-full"
+            className="h-14 w-14 object-cover rounded-full"
           />
 
           <Link href="/">
