@@ -24,7 +24,7 @@ export default function BookingPage() {
     eventType: '',
     date: '',
     location: '',
-    budget: 5000,
+    budget: 100000,
     notes: '',
   });
 
@@ -36,11 +36,46 @@ export default function BookingPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Submitting Booking Inquiry Data:", formData);
-    // Add custom booking engine endpoints or state dispatches here
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  console.log(process.env.FLW_SECRET_KEY);
+
+  const tx_ref = `BOOKING-${Date.now()}`;
+
+  const payload = {
+    tx_ref,
+    amount: formData.budget,
+    currency: "NGN",
+    redirect_url: `${window.location.origin}/payment-success`,
+    customer: {
+      email: formData.email,
+      phonenumber: formData.phoneNumber,
+      name: formData.fullName,
+    },
+    customizations: {
+      title: "Sammy Tee Booking",
+      description: formData.eventType,
+    },
   };
+
+  try {
+  const response = await fetch("/api/flutterwave", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(payload),
+});
+
+    const data = await response.json();
+
+    if (data.status === "success") {
+      window.location.href = data.data.link;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
 
   return (
     <div>
@@ -179,13 +214,13 @@ export default function BookingPage() {
                 <div className="flex flex-col gap-1.5 py-2">
                   <div className="flex justify-between items-center text-xs font-semibold text-slate-500 tracking-wide uppercase">
                     <span>Budget Range</span>
-                    <span className="text-[#8B6A00] font-bold text-sm">${formData.budget.toLocaleString()}</span>
+                    <span className="text-[#8B6A00] font-bold text-sm">(₦){formData.budget.toLocaleString()}</span>
                   </div>
                   <input 
                     type="range" 
                     name="budget"
-                    min="1000" 
-                    max="25000" 
+                    min="100000" 
+                    max="2500000" 
                     step="5000"
                     value={formData.budget}
                     onChange={handleInputChange}

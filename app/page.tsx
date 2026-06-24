@@ -4,24 +4,29 @@ import Footer from "./components/footer/page";
 export default function HomePage() {
   const products = [
     {
-      name: "Classic Guitar",
-      price: "$299",
-      image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=800&q=80",
+      name: "Professional Talking drum",
+      price: "(₦)50,000",
+      image: "/drum9.jpg",
     },
     {
-      name: "Digital Keyboard",
-      price: "$499",
-      image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=80",
+      name: "Electric Talking Drum",
+      price: "(₦)80,000",
+      image: "/drum10.jpg",
     },
     {
-      name: "Mixer Console",
-      price: "$399",
-      image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=800&q=80",
+      name: "3 in 1 Multi-function",
+      price: "(₦)150,000",
+      image: "/drum12.jpg",
     },
     {
-      name: "Studio Microphone",
-      price: "$199",
-      image: "https://images.unsplash.com/photo-1516223725307-6f76b9ec8742?auto=format&fit=crop&w=800&q=80",
+      name: "Studio & Stage quality",
+      price: "(₦)70,000",
+      image: "/drum11.jpg",
+    },
+     {
+      name: "Playing Stick",
+      price: "(₦)2,000",
+      image: "/stick1.jpg",
     },
   ];
 

@@ -28,7 +28,7 @@ export default function Navbar() {
   };
 
   return (
-   <main className="max-w-7xl mx-auto px-6 py-16 text-[#0b1325]">
+   <main className="max-w-7xl mx-auto px-0 py-0 text-[#0b1325]">
       <div className="max-w-7xl mx-auto h-[72px] flex items-center justify-between px-5 md:px-8 lg:px-12">
 
         {/* Logo */}
